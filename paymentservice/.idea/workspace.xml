@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9454c2a-2adc-452b-9686-0cffd2336cf1" name="Changes" comment="">
+    <list default="true" id="40f3bae7-c970-4620-94f6-9b13e00df53a" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../catalogservice/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../orderservice/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/paymentservice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../paymentservice/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../paymentservice/.idea/paymentservice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../paymentservice/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../paymentservice/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../catalogservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalogservice/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../orderservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../orderservice/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2aY1uh39VDrJyV6grCqhF9ETrT8" />
+  <component name="ProjectId" id="2aY2XXgtu5l7ckSZ1U9A1byPkDo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,6 +50,8 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/paulodhiambo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
