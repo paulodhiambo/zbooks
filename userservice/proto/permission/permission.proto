@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option go_package = "./proto/permission";
+
+message Permission {
+    string name = 1;
+    string description = 2;
+}
+
+message CreatePermissionRequest {
+    Permission permission = 1;
+}
+
+message CreatePermissionResponse {
+    string status = 1;
+    Permission created_permission = 2;
+}
+
+message GetPermissionRequest {
+    string name = 1;
+}
+
+message GetPermissionResponse {
+    string status = 1;
+    Permission permission = 2;
+}
+message GetAllPermissionsRequest {
+}
+
+message GetAllPermissionsResponse {
+    string status = 1;
+    repeated Permission permissions = 2;
+}
+
+message UpdatePermissionRequest {
+    string name = 1;
+    Permission updated_permission = 2;
+}
+
+message UpdatePermissionResponse {
+    string status = 1;
+    Permission updated_permission = 2;
+}
+
+message DeletePermissionRequest {
+    string name = 1;
+}
+
+message DeletePermissionResponse {
+    string status = 1;
+}
+
+service PermissionService {
+    rpc CreatePermission (CreatePermissionRequest) returns (CreatePermissionResponse);
+    rpc GetPermission (GetPermissionRequest) returns (GetPermissionResponse);
+    rpc GetAllPermissions (GetAllPermissionsRequest) returns (GetAllPermissionsResponse);
+    rpc UpdatePermission (UpdatePermissionRequest) returns (UpdatePermissionResponse);
+    rpc DeletePermission (DeletePermissionRequest) returns (DeletePermissionResponse);
+}

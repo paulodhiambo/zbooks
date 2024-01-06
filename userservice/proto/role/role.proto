@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option go_package = "./proto/role";
+
+message Permission {
+    string name = 1;
+    string description = 2;
+}
+
+message Role {
+    string name = 1;
+    string description = 2;
+    repeated Permission permissions = 3;
+}
+
+message CreateRoleRequest {
+    Role new_role = 1;
+}
+
+message CreateRoleResponse {
+    string status = 1;
+    Role created_role = 2;
+}
+
+message GetRoleRequest {
+    string name = 1;
+}
+
+message GetRoleResponse {
+    string status = 1;
+    Role role = 2;
+}
+
+message GetAllRolesRequest {
+}
+
+message GetAllRolesResponse {
+    string status = 1;
+    repeated Role roles = 2;
+}
+
+message UpdateRoleRequest {
+    string name = 1;
+    Role updated_role = 2;
+}
+
+message UpdateRoleResponse {
+    string status = 1;
+    Role updated_role = 2;
+}
+
+message DeleteRoleRequest {
+    string name = 1;
+}
+
+message DeleteRoleResponse {
+    string status = 1;
+}
+
+service RoleService {
+    rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse);
+    rpc GetRole (GetRoleRequest) returns (GetRoleResponse);
+    rpc GetAllRoles (GetAllRolesRequest) returns (GetAllRolesResponse);
+    rpc UpdateRole (UpdateRoleRequest) returns (UpdateRoleResponse);
+    rpc DeleteRole (DeleteRoleRequest) returns (DeleteRoleResponse);
+}
