@@ -4,15 +4,15 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "./proto/user";
 
-message Permission {
+message PermissionUser {
     string name = 1;
     string description = 2;
 }
 
-message Role {
+message RoleUser {
     string name = 1;
     string description = 2;
-    repeated Permission permissions = 3;
+    repeated PermissionUser permissions = 3;
 }
 
 message User {
@@ -25,7 +25,7 @@ message User {
     bool is_active = 7;
     google.protobuf.Timestamp deactivated_at = 8;
     google.protobuf.Timestamp dob = 9;
-    repeated Role roles = 10;
+    repeated RoleUser roles = 10;
 }
 
 message CreateUserRequest {

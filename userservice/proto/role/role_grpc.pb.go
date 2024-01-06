@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	RoleService_CreateRole_FullMethodName  = "/RoleService/CreateRole"
-	RoleService_GetRole_FullMethodName     = "/RoleService/GetRole"
-	RoleService_GetAllRoles_FullMethodName = "/RoleService/GetAllRoles"
-	RoleService_UpdateRole_FullMethodName  = "/RoleService/UpdateRole"
-	RoleService_DeleteRole_FullMethodName  = "/RoleService/DeleteRole"
+	RoleService_CreateRole_FullMethodName  = "/role.RoleService/CreateRole"
+	RoleService_GetRole_FullMethodName     = "/role.RoleService/GetRole"
+	RoleService_GetAllRoles_FullMethodName = "/role.RoleService/GetAllRoles"
+	RoleService_UpdateRole_FullMethodName  = "/role.RoleService/UpdateRole"
+	RoleService_DeleteRole_FullMethodName  = "/role.RoleService/DeleteRole"
 )
 
 // RoleServiceClient is the client API for RoleService service.
@@ -228,7 +228,7 @@ func _RoleService_DeleteRole_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RoleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "RoleService",
+	ServiceName: "role.RoleService",
 	HandlerType: (*RoleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

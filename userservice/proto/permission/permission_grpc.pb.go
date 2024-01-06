@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	PermissionService_CreatePermission_FullMethodName  = "/PermissionService/CreatePermission"
-	PermissionService_GetPermission_FullMethodName     = "/PermissionService/GetPermission"
-	PermissionService_GetAllPermissions_FullMethodName = "/PermissionService/GetAllPermissions"
-	PermissionService_UpdatePermission_FullMethodName  = "/PermissionService/UpdatePermission"
-	PermissionService_DeletePermission_FullMethodName  = "/PermissionService/DeletePermission"
+	PermissionService_CreatePermission_FullMethodName  = "/permission.PermissionService/CreatePermission"
+	PermissionService_GetPermission_FullMethodName     = "/permission.PermissionService/GetPermission"
+	PermissionService_GetAllPermissions_FullMethodName = "/permission.PermissionService/GetAllPermissions"
+	PermissionService_UpdatePermission_FullMethodName  = "/permission.PermissionService/UpdatePermission"
+	PermissionService_DeletePermission_FullMethodName  = "/permission.PermissionService/DeletePermission"
 )
 
 // PermissionServiceClient is the client API for PermissionService service.
@@ -228,7 +228,7 @@ func _PermissionService_DeletePermission_Handler(srv interface{}, ctx context.Co
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var PermissionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "PermissionService",
+	ServiceName: "permission.PermissionService",
 	HandlerType: (*PermissionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
