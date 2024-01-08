@@ -18,6 +18,6 @@ FROM alpine:latest
 WORKDIR /app
 
 # Copy the built binary from the build stage
-COPY --from=builder /app/cmd/userservice/app .
+COPY --from=builder /app/cmd/userservice .
 
 CMD ["./app"]
