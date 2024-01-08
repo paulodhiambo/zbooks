@@ -30,4 +30,4 @@ jobs:
           docker build -t paulodhiambo/userservice:latest ./userservice
 #          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
 #          docker push your-docker-username/user-service:latest
-  CGO_ENABLED=0 GOOS=linux
+#  CGO_ENABLED=0 GOOS=linux
