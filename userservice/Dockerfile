@@ -6,7 +6,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o cmd/userservice/ .
+RUN go build -a -installsuffix cgo -o cmd/userservice/ .
 
 FROM alpine:latest
 
