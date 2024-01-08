@@ -7,6 +7,7 @@ import (
 	"log"
 	"userservice/config"
 	"userservice/internal/database"
+	"userservice/internal/models"
 	permissionHandler "userservice/pkg/v1/permission/handler"
 	permissionRepository "userservice/pkg/v1/permission/repository"
 	permissionService "userservice/pkg/v1/permission/service"
@@ -45,6 +46,8 @@ func Initialize(server *grpc.Server) *Application {
 	userSvc := userService.NewUserService(userRepository.NewUserRepository(db))
 	roleSvc := roleService.NewRoleService(roleRepository.NewUserRepository(db))
 	permissionSvc := permissionService.NewPermissionService(permissionRepository.NewPermissionRepository(db))
+	//Initialize roles
+	InitializeRoles(db)
 
 	// Return the initialized application
 	return &Application{
@@ -54,5 +57,38 @@ func Initialize(server *grpc.Server) *Application {
 		PermissionHandler: permissionHandler.NewPermissionHandler(server, roleSvc),
 		RoleHandler:       roleHandler.NewRoleHandler(server, permissionSvc),
 		grpcServer:        server,
+	}
+}
+
+func InitializeRoles(db *gorm.DB) {
+	defaultRoles := []models.Role{
+		{
+			Name: models.RoleAdmin,
+			Permissions: []models.Permission{
+				{Name: "manage_users", Description: "Manage users"},
+				{Name: "manage_roles", Description: "Manage roles"},
+				// Add more permissions as needed
+			},
+		},
+		{
+			Name: models.RoleSuperAdmin,
+			Permissions: []models.Permission{
+				{Name: "manage_everything", Description: "Manage everything"},
+				// Add more permissions as needed
+			},
+		},
+		{
+			Name: models.RoleCustomer,
+			Permissions: []models.Permission{
+				{Name: "view_profile", Description: "View user profile"},
+				// Add more permissions as needed
+			},
+		},
+	}
+
+	for _, role := range defaultRoles {
+		if err := db.Create(&role).Error; err != nil {
+			log.Fatalf("Error creating role %s: %v", role.Name, err)
+		}
 	}
 }

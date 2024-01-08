@@ -3,7 +3,6 @@ package models
 import (
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
-	"log"
 	"time"
 )
 
@@ -63,45 +62,4 @@ func (u *User) BeforeCreate(tx *gorm.DB) error {
 	u.Password = string(hashedPassword)
 	u.IsActive = true
 	return nil
-}
-
-// InitializeRoles initializes the database with default roles
-func InitializeRoles(db *gorm.DB) {
-	defaultRoles := []Role{
-		{
-			Name: RoleAdmin,
-			Permissions: []Permission{
-				{Name: "manage_users", Description: "Manage users"},
-				{Name: "manage_roles", Description: "Manage roles"},
-				// Add more permissions as needed
-			},
-		},
-		{
-			Name: RoleSuperAdmin,
-			Permissions: []Permission{
-				{Name: "manage_everything", Description: "Manage everything"},
-				// Add more permissions as needed
-			},
-		},
-		{
-			Name: RoleCustomer,
-			Permissions: []Permission{
-				{Name: "view_profile", Description: "View user profile"},
-				// Add more permissions as needed
-			},
-		},
-	}
-
-	for _, role := range defaultRoles {
-		if err := db.Create(&role).Error; err != nil {
-			log.Fatalf("Error creating role %s: %v", role.Name, err)
-		}
-	}
-}
-
-// InitializeDefaultRoles initializes the database with default roles on startup
-func InitializeDefaultRoles() {
-	//db := // Initialize your GORM database connection here
-	//	db.AutoMigrate(&User{}, &Role{}, &Permission{},&Address{})
-	//InitializeRoles(db)
 }

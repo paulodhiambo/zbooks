@@ -23,7 +23,7 @@ func Load() (*Config, error) {
 	return &Config{
 		DBHost:     getEnv("DB_HOST", "localhost"),
 		DBPort:     getEnv("DB_PORT", "5432"),
-		DBName:     getEnv("DB_NAME", "saasify"),
+		DBName:     getEnv("DB_NAME", "zusers"),
 		DBUser:     getEnv("DB_USER", "postgres"),
 		DBPassword: getEnv("DB_PASSWORD", "postgres"),
 	}, nil

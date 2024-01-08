@@ -1,0 +1,94 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below if you'll use dep)
+#vendor/
+
+# Compiled Go source code
+*.cgo.go
+
+# Compiled Object files, Static and Dynamic libs
+*.o
+*.a
+*.so
+
+# Compiled bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Test coverage
+*.cover
+
+# Logs
+*.log
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created by OS X
+ehthumbs.db
+Thumbs.db
+
+# Go-specific
+# ----------------------------------
+
+# Compiled Go binaries
+*.exe
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below if you'll use dep)
+#vendor/
+
+# .idea files
+.idea/
+
+# End of Go-specific
+# ----------------------------------
+
+# Terraform
+# ----------------------------------
+
+# .terraform directories
+**/.terraform
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+# .terraform.lock.hcl
+.terraform.lock.hcl
+
+# .terraformenv
+.terraformenv
+
+# Crash log files
+crash.log
+
+#user service
+userservice/.env
+
